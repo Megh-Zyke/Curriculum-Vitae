@@ -1,0 +1,14 @@
+body{
+    background-color:#EBF4FA;
+}
+
+.name{
+    font-family: "Segoe Script";
+}
+
+hr{
+    border-style: dotted none none;
+    width:25%;
+    border-width: 5px;
+    color:#091c2a;
+}
