@@ -1,0 +1,662 @@
+body{
+    background-color: rgb(15, 32, 48) ;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    transition: all .4s ease-in-out;
+   overflow-x: hidden;
+}
+
+
+@keyframes appear {
+    0% {
+      transform: scale(1,1);
+      opacity: 0;
+    }
+    1%{
+        transform: scale(1.5,1.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1,1);
+        opacity: 1;
+    }
+  }
+
+
+@keyframes slidedown{
+    0% {
+        transform: translateY(-100%) scaleY(0);
+      }
+      100% {
+        transform: translateY(0) scaleY(1);
+      }
+}
+  
+@keyframes slideleft{
+    0% {
+        transform: translateX(-100%) scaleX(0);
+      }
+      100% {
+        transform: translateX(0) scaleX(1);
+      }
+}
+
+
+@keyframes slideright{
+    0% {
+        transform: translateX(100%) scaleX(0);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0) scaleX(1);
+        opacity: 1;
+      }
+}
+
+@keyframes slideup{
+    0% {
+        transform: translateY(100%) scaleY(0);
+      }
+      100% {
+        transform: translateY(0) scaleY(1);
+      }
+}
+
+.header-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    min-height: 100vh;
+  }
+
+  .container {
+    display: none;
+    transform: translateY(-100%) scale(0);
+    transition: all 0.4s ease-in-out;
+    background-color: rgb(15, 32, 48);
+    color: rgb(186, 198, 209);
+  }
+  
+  .active {
+    display: block;
+    animation: appear 1s ease-in-out;
+    transform: translateY(0) scaleY(1);
+  }
+  .header-content .left-header {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+
+  .header-content .left-header .h-shape {
+    transition: all 0.4s ease-in-out;
+    width: 65%;
+    height: 100%;
+    background-color: aliceblue;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%);
+  }
+
+
+  .header-content .left-header .image {
+    border-radius: var(--br-sm-2);
+    height: 90%;
+    width: 68%;
+    margin-left: 4rem;
+    
+    transition: all 0.4s ease-in-out;
+  }
+
+  
+  .header-content .left-header .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.4s ease-in-out;
+    filter: grayscale(100%);
+    animation: slideleft 1s ease-in-out;
+  }
+  .header-content .left-header .image img:hover {
+    filter: grayscale(0);
+  }
+  .header-content .right-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 18rem;
+  }
+  .header-content .right-header .name {
+    font-size: 3rem;
+  }
+
+  .header-content .right-header .name span {
+    color: rgb(234, 255, 94);
+  }
+
+  .header-content .right-header p {
+    margin: 1.5rem 0;
+    line-height: 2rem;
+  }
+
+.header-about{
+    text-align: center;
+}
+
+.header-about .name{
+    font-size: 100px;
+    margin-top: 20px;
+    position: relative;
+    opacity: 0.1;
+    animation: slidedown 1s ease-in-out;
+}
+
+.header-about .about-me{
+    position: absolute;
+    top:0px;
+    left:580px;
+    font-size: 70px;
+    color: #fff;
+}
+
+.about-container{
+    margin: 60px;
+    
+}
+
+.about-container .about-left{
+    width: 400px;
+    margin-left: 200px;
+}
+
+.about-container .about-left .about-header, .about-header{
+    color: #fff;
+    font-size:40px ;
+    
+    
+}
+
+.about-container .about-left .about-data {
+    font-size:20px ;
+}
+
+.about-container .about-right{
+    position: absolute;
+    top: 170px;
+    left: 950px;
+}
+
+
+.about-right .icons .icon{
+    height: 60px;
+    width: 60px;
+    padding-bottom: 10px ;
+    cursor: pointer;
+    margin-bottom: 30px;
+    
+}
+
+.icons-left{
+    width: 80px;
+}
+
+.icons-right{
+    width: 80px;
+    position: absolute;
+    top: 130px;
+    left:200px;
+}
+
+
+
+/* Progress bars left */
+.c-progress{
+    width: 100px;
+    height: 15px;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 15px;
+    top: 200px;
+    z-index: 2;
+    left: 0px;
+    animation: slideleft 1s ease-in-out;
+    display: none;
+}
+
+.c-p{
+    width:80px;
+    height: 15px;
+    background-color: #35da14;
+    position:absolute;
+    border-radius: 15px;
+    z-index: 3;
+    display: none;
+    animation: slideleft .9s ease-in-out;
+
+}
+
+
+.c1-progress{
+    width: 100px;
+    height: 15px;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 15px;
+    top: 305px;
+    z-index: 2;
+    display: none;
+    animation: slideleft .9s ease-in-out;
+}
+
+.c1-p{
+    width:85px;
+    height: 15px;
+    background-color: #35da14;
+    position:absolute;
+    border-radius: 15px;
+    z-index: 3;
+    display: none;
+    animation: slideleft .9s ease-in-out;
+}
+
+
+.python-progress{
+    width: 100px;
+    height: 15px;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 15px;
+    top: 410px;
+    z-index: 2;
+    display: none;
+    animation: slideleft .9s ease-in-out;
+}
+
+.python-p{
+    width:85px;
+    height: 15px;
+    background-color: #35da14;
+    position:absolute;
+    border-radius: 15px;
+    z-index: 3;
+    display: none;
+    animation: slideleft .9s ease-in-out;
+}
+
+
+.sql-progress{
+    width: 100px;
+    height: 15px;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 15px;
+    top: 515px;
+    z-index: 2;
+    display: none;
+    animation: slideleft .9s ease-in-out;    
+}
+
+.sql-p{
+    width:50px;
+    height: 15px;
+    background-color: #35da14;
+    position:absolute;
+    border-radius: 15px;
+    z-index: 3;
+    display: none;
+    animation: slideleft .9s ease-in-out;
+}
+
+/* progress bar left done */
+
+
+/* progressb bar right starting */
+
+
+.html-progress{
+    width: 100px;
+    height: 15px;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 15px;
+    top: 70px;
+    z-index: 2;
+    display: none;
+    animation: slideleft .9s ease-in-out;
+}
+
+.html-p{
+    width:70px;
+    height: 15px;
+    background-color: #35da14;
+    position:absolute;
+    border-radius: 15px;
+    z-index: 3;
+    display: none;
+    animation: slideleft .9s ease-in-out;
+}
+
+
+.css-progress{
+    width: 100px;
+    height: 15px;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 15px;
+    top: 175px;
+    z-index: 2;
+    display: none;
+    animation: slideleft .9s ease-in-out;
+}
+
+.css-p{
+    width:75px;
+    height: 15px;
+    background-color: #35da14;
+    position:absolute;
+    border-radius: 15px;
+    z-index: 3;
+    display: none;
+    animation: slideleft .9s ease-in-out;
+}
+
+
+.js-progress{
+    width: 100px;
+    height: 15px;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 15px;
+    top: 290px;
+    z-index: 2;
+    display: none;
+    animation: slideleft .9s ease-in-out;
+}
+
+.js-p{
+    width:75px;
+    height: 15px;
+    background-color: #35da14;
+    position:absolute;
+    border-radius: 15px;
+    z-index: 3;
+    display: none;
+    animation: slideleft .9s ease-in-out;
+    
+}
+
+
+.nodejs-progress{
+    width: 100px;
+    height: 15px;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 15px;
+    top: 385px;
+    z-index: 2;
+    display: none;
+    animation: slideleft .9s ease-in-out;
+}
+
+.nodejs-p{
+    width:50px;
+    height: 15px;
+    background-color: #35da14;
+    position:absolute;
+    border-radius: 15px;
+    z-index: 3;
+    display: none;
+    animation: slideleft .9s ease-in-out;
+}
+
+
+/* right side progress bars done */
+.c:hover{
+    opacity: 0.4;
+    transition: all .5s ease-in-out;
+}
+
+.c1:hover{
+    opacity: 0.4;
+    transition: all .5s ease-in-out;
+}
+
+.python:hover{
+    opacity: 0.4;
+    transition: all .5s ease-in-out;
+}
+
+.css:hover{
+    opacity: 0.4;
+    transition: all .5s ease-in-out;
+}
+
+.html:hover{
+    opacity: 0.4;
+    transition: all .5s ease-in-out;
+}
+
+.javascript:hover{
+    opacity: 0.4;
+    transition: all .5s ease-in-out;
+}
+
+.sql:hover{
+    opacity: 0.4;
+    transition: all .5s ease-in-out;
+}
+
+.nodejs:hover{
+    opacity: 0.4;
+    transition: all .5s ease-in-out;
+}
+
+
+/* carasouel css */
+
+.carasouel{
+    align-items: center;
+    height: 450px;
+    margin: 0 400px;
+    border-radius: 20px;
+    border-color: rgb(255, 242, 66);
+    border-style: solid;
+    background-color: #fff;
+    
+}
+
+/* left button */
+.left-btn{
+    margin-top: 220px;
+    width: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: .5s;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.project{
+    animation: appear 1s ease-in-out;
+}
+
+
+.projects{
+    color: black;
+    position: absolute;
+    top: 250px;
+    margin-right:450px;
+    margin-left:50px;
+    display: none;
+    
+}
+
+.p-active{
+    
+    display: block;
+}
+
+.right-btn{
+    top:0;
+    position: absolute;
+    left:1083px;
+    margin-top: 230px;
+    top: 225px;
+    cursor: pointer;
+    transition: .5s;
+    width: 10px;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+.project-header{
+    text-align: center;
+    margin-top:60px;
+    font-size: 40px;
+    
+}
+
+.description{
+   text-align: center;
+   font-size: 25px;
+   
+}
+
+
+.git{
+    
+    font-size: 70px;
+    transition: .5s;
+}
+
+.git :hover{
+    transform: scale(1.05);
+}
+
+
+.controls{
+    position: absolute;
+    top: 0;
+    margin-top: 150px;
+    left:93%;
+    font-size: 60px;
+    color:#fff;
+    cursor: pointer;
+}
+
+.control:hover{
+    color: rgb(234, 255, 94);
+
+}
+
+
+.active-btn{
+    color: rgb(234, 255, 94);
+}
+
+.connect{
+    margin-left: -90px;
+}
+
+.contact-right{
+    margin-left: 300px;
+    width: 350px;
+    top:160px;
+    position: absolute;
+}
+.heading{
+    font-size: 30px;
+    color: #fff;
+}
+
+
+
+.contact-icons{
+    display: flex;
+    width: 60px;
+    font-size: 40px;
+    position: absolute;
+    top: 200px;
+    margin-left: 80px;
+    animation: slideup 1s ease-in-out;
+}
+
+.fab{
+    margin-bottom:20px;
+    padding:20px;
+    background-color: aliceblue;
+    border-radius: 50%;
+}
+
+.fab .fa-facebook-f{
+    width: 100px;
+
+}
+
+
+.form-right{
+    position:absolute;
+    top: 200px;
+    left:750px;
+    width: 600px;
+}
+
+.N , .mail{
+    font-size: 20px;
+    border-radius: 20px;
+    border-style: none;
+    height: 40px;
+    width: 200px;
+    margin:20px 15px ;
+    padding: 2px 10px
+}
+
+.subject{
+    font-size: 20px;
+    border-radius: 20px;
+    border-style: none;
+    height: 40px;
+    width: 460px;
+    margin:20px 15px ;
+    padding: 2px 10px
+}
+
+#data{
+    width: 460px;
+    border-radius: 20px;
+    margin:20px 15px ;
+    padding: 10px 10px;
+    height: 250px;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+}
+.submit-btn{
+    height: 0;
+}
+button{
+    font-size: 20px;
+    border-radius: 20px;
+    border-style: none;
+    height: 60px;
+    padding: 0 50px;
+    position: relative;
+    left:-400px;
+    top:-30px;
+    background-color: #35da14;
+    color: rgb(15, 32, 48);
+    font-weight: bolder;
+    transition: .5s;
+}
+
+button:hover{
+    background-color:  rgb(15, 32, 48);
+    border-color: #fff;
+    border-style: solid;
+    color : #fff;
+    
+}
+
+.CV{
+    margin-left: -100px;
+}
