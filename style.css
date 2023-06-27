@@ -771,3 +771,35 @@ button:hover{
         
     }
 }
+
+
+
+
+.cv-download{
+    width: 16%;
+    text-align: center;
+    margin-left: 40%;
+    margin-top: 10%;
+    
+}
+
+.cv-download a{
+    font-size : 30px;
+    font-weight: bolder;
+    text-decoration: none;
+    padding:20px;
+    border-radius: 20px;
+    background-color: #35da14;
+    color: rgb(15, 32, 48);
+    
+    
+}
+
+.cv-download a:hover{
+    border-color: #fff;
+    border-style: solid;
+    color: #fff;
+    background-color: rgb(15, 32, 48);
+    font-size: 35px;
+    
+}
