@@ -7,7 +7,9 @@ body{
    overflow-x: hidden;
 }
 
-
+*{
+    transition: .5s;
+}
 @keyframes appear {
     0% {
       transform: scale(1,1);
@@ -155,11 +157,13 @@ body{
 }
 
 .header-about .about-me{
+    display: flex;
     position: absolute;
     top:0px;
     left:580px;
     font-size: 70px;
     color: #fff;
+    transition: .5s;
 }
 
 .about-container{
@@ -468,8 +472,13 @@ body{
     
 }
 
+.btn{
+    width: 100%;
+    
+    
+}
 /* left button */
-.left-btn{
+.btn .left-btn{
     margin-top: 220px;
     width: 10px;
     margin-left: 20px;
@@ -478,6 +487,17 @@ body{
     -webkit-tap-highlight-color: transparent;
 }
 
+.btn .right-btn{
+    margin-top: -30px;
+    width: 10px;
+    margin-left: 93.5%;
+    margin-right: 20px;
+    transition: .5s;
+    -webkit-tap-highlight-color: transparent;
+}
+.right-btn{
+    cursor: pointer;
+}
 .project{
     animation: appear 1s ease-in-out;
 }
@@ -498,17 +518,7 @@ body{
     display: block;
 }
 
-.right-btn{
-    top:0;
-    position: absolute;
-    left:1083px;
-    margin-top: 230px;
-    top: 225px;
-    cursor: pointer;
-    transition: .5s;
-    width: 10px;
-    -webkit-tap-highlight-color: transparent !important;
-}
+
 
 .project-header{
     text-align: center;
@@ -659,4 +669,105 @@ button:hover{
 
 .CV{
     margin-left: -100px;
+
+}
+
+@media screen and (max-width: 1250px) {
+    header {
+        padding: 0 !important;
+      }
+
+      .header-content {
+        grid-template-columns: repeat(1, 1fr);
+        padding-bottom: 6rem;
+      }
+      
+    .left-header .h-shape {
+        display: none;
+      }
+      .right-header {
+        grid-row: 1;
+        padding-right: 0rem !important;
+        width: 90%;
+        margin: 0 auto;
+      }
+      .right-header .name {
+        font-size: 2.5rem !important;
+        text-align: center;
+        padding-top: 3rem;
+      }
+    
+      .header-content .left-header .image {
+        margin: 0 auto;
+        width: 80%;
+      }
+      .container .about{
+        grid-template-columns: repeat(1, 1fr);
+        
+      }
+      .header-about{
+        text-align: center;
+        
+      }
+      .header-about .about-me{
+         position:absolute;
+         left: 0;
+         text-align: justify;
+         transition: .5s;
+        width: 100%;
+        margin-left: 20%;
+         
+      }
+
+      .about-container .about-left{
+        position:absolute;
+         left: 0;
+         text-align: center;
+         transition: .5s;
+         margin-top: 0;
+         width: 60%;
+         margin-left: 15%;
+        
+         
+      }
+
+      .about-container .about-right{
+        position:absolute;
+        left: 0; 
+        top:500%;
+         text-align: justify;
+         transition: .5s;
+         margin-left: 15%;
+         
+         width: 80%;
+      }
+
+      .icons .icons-right{
+        margin-left:30%; ;
+      }
+    .project .header-about .about-me{
+        width: 100%;
+        text-align: center;
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+
+    .carasouel {
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+        
+    }
+
+    .carasouel .projects{
+        transform: scale(0.75);
+        width:70%;
+        margin: 0;
+        
+    }
+
+    .carasouel .projects .project-header{
+        margin-top: -20px;
+        
+    }
 }
